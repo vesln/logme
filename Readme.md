@@ -2,7 +2,7 @@
 
 Minimalistic logger for Node.js.
 
-![screenshot](http://img17.imageshack.us/img17/3241/screenshot20111209at120.png)
+![screenshot](http://img853.imageshack.us/img853/5865/screenshot20111209at122.png)
 
 ## Features.
 
@@ -18,7 +18,7 @@ Minimalistic logger for Node.js.
 ## Neat. Now what?
 
 	var logme = require('logme');
-	logme.critical('The base is under atack');
+	logme.critical('The base is under attack');
 
 ## Whaaaat?
 

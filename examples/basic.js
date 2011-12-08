@@ -14,7 +14,7 @@ logme.debug('Lol, coffescript.');
 logme.info('Logme is sexy.');
 logme.warning('Danger!');
 logme.error('Ooops, something went wrong.');
-logme.critical('The base is under atack.');
+logme.critical('The base is under attack.');
 
 // or...
 logme.log('debug', 'Lol, coffescript.');
