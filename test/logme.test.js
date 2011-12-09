@@ -9,7 +9,6 @@ var should = require('should');
 var main = require('../');
 var Logme = main.Logme;
 var dateRegExp = /(Sun|Mon|Tue|Wed|Thu|Fri|Sat)\,\s\d{2}\s(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)\s\d{4}\s\d{2}:\d{2}:\d{2}\sGMT/;
-var numberRegExp = /\d+/
 var logme = null;
 var log = null;
 var stream = {
@@ -70,20 +69,23 @@ describe('Logme', function(){
       logme.tokens.date().should.match(dateRegExp);
     });
     it('should have gid', function(){
-      logme.tokens.gid().should.match(numberRegExp);
+      logme.tokens.gid().should.eql(process.getgid());
     });
     it('should have uid', function(){
-      logme.tokens.uid().should.match(numberRegExp);
+      logme.tokens.uid().should.eql(process.getuid());
     });
     it('should have pid', function(){
-      logme.tokens.pid().should.match(numberRegExp);
+      logme.tokens.pid().should.eql(process.pid);
     });
-    it('should have memmory', function(){
-      logme.tokens.memmory().should.be.a('object').and.have.property('rss');
-      logme.tokens.memmory().should.be.a('object').and.have.property('heapTotal');
-      logme.tokens.memmory().should.be.a('object').and.have.property('heapUsed');
+    it('should have rss', function(){
+      logme.tokens.rss().should.eql(process.memoryUsage().rss);
     });
-    
+    it('should have heapTotal', function(){
+      logme.tokens.rss().should.match(/\d+/);
+    });
+    it('should have heapUsed', function(){
+      logme.tokens.rss().should.match(/\d+/);
+    });
   });
   
   describe('message', function(){
