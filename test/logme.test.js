@@ -78,9 +78,6 @@ describe('Logme', function(){
     it('should have pid', function(){
       logme.tokens.pid.should.match(numberRegExp);
     });
-    it('should have ', function(){
-      logme.tokens..should.match(numberRegExp);
-    });
     it('should have memmory', function(){
       logme.tokens.memmory.should.be.a('object').and.have.property('rss','heapTotal','heapUsed');
     });
