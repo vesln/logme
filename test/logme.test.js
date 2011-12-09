@@ -46,11 +46,11 @@ describe('Logme', function(){
   
   it('should have levels', function(){
     logme.levels.should.eql({
-      debug: 0,
-      info: 1,
-      warning: 2,
+      debug: 7,
+      info: 6,
+      warning: 4,
       error: 3,
-      critical: 4
+      critical: 2
     });
   });
   
@@ -92,7 +92,7 @@ describe('Logme', function(){
       log = null;
     });
     
-    it('shouldn\'t log messages if the supplied log level is less than the defined one', function(){
+    it('shouldn\'t log messages if the supplied log level is greater than the defined one', function(){
       var logme = new Logme({level: 'error', stream: stream});
       should.not.exist(logme.log('debug', 'Foo'));
     });
