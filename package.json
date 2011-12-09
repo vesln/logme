@@ -11,6 +11,11 @@
       "mocha": "0.3.3"
     , "should": "0.3.2"
   }
+  , "repository" : {
+      "type" : "git",
+      "url" : "http://github.com/vesln/logme.git"
+  }
+  , "homepage": "http://github.com/vesln/logme"
   , "main": "index"
   , "engines": { "node": ">= 0.6.0 < 0.7.0" }
 }
