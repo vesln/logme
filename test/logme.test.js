@@ -79,7 +79,9 @@ describe('Logme', function(){
       logme.tokens.pid().should.match(numberRegExp);
     });
     it('should have memmory', function(){
-      logme.tokens.memmory().should.be.a('object').and.have.property('rss','heapTotal','heapUsed');
+      logme.tokens.memmory().should.be.a('object').and.have.property('rss');
+      logme.tokens.memmory().should.be.a('object').and.have.property('heapTotal');
+      logme.tokens.memmory().should.be.a('object').and.have.property('heapUsed');
     });
     
   });
