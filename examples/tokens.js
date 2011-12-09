@@ -7,7 +7,7 @@
 
 var logme = require('../');
 
-logme.templates['info'] = ':date - INFO - :message';
+logme.templates['info'] = ':date - INFO (:pid) - :message';
 logme.info('Custom templates');
 
 
