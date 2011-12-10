@@ -1,4 +1,11 @@
 
+0.2.2 / 2011-12-10 
+==================
+
+  * Bumping version number and adding eyes as dep
+  * Fixing the file example
+  * Adding inspect for better debugging
+
 0.2.1 / 2011-12-10 
 ==================
 

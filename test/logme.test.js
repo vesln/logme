@@ -115,4 +115,14 @@ describe('Logme', function(){
       log.should.equal(logme.message('debug', 'Bar') + '\n');
     });
   });
+  
+  describe('inspect', function(){
+    it('should inspect an obj', function(){
+      var logme = new Logme({ stream: stream, theme: { inspect: false }});
+      var obj = { foo: 'bar' };
+      logme.templates['debug'] = ':message';
+      logme.inspect(obj)
+      log.should.eql('{ foo: \'bar\' }\n');
+    });
+  });
 });
