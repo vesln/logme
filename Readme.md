@@ -2,7 +2,7 @@
 
 Minimalistic logger for Node.js.
 
-![screenshot](http://img853.imageshack.us/img853/5865/screenshot20111209at122.png)
+![screenshot](http://img853.imageshack.us/img853/3641/screenshot20111210at226.png)
 
 ## Features.
 
