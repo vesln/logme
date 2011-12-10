@@ -16,6 +16,9 @@
       "url" : "http://github.com/vesln/logme.git"
   }
   , "homepage": "http://github.com/vesln/logme"
+  , "scripts": {
+      "test": "make test"
+  }
   , "main": "index"
   , "engines": { "node": ">= 0.6.0 < 0.7.0" }
 }
