@@ -1,3 +1,5 @@
+[![Build Status](https://secure.travis-ci.org/vesln/logme.png)](http://travis-ci.org/vesln/logme)
+
 # Logme
 
 Minimalistic logger for Node.js.

@@ -71,13 +71,13 @@ describe('Logme', function(){
       logme.tokens.pid().should.eql(process.pid);
     });
     it('should have rss', function(){
-      logme.tokens.rss().should.eql(process.memoryUsage().rss);
+      logme.tokens.rss().should.match(/\d+/);
     });
     it('should have heapTotal', function(){
-      logme.tokens.rss().should.match(/\d+/);
+      logme.tokens.heapTotal().should.match(/\d+/);
     });
     it('should have heapUsed', function(){
-      logme.tokens.rss().should.match(/\d+/);
+      logme.tokens.heapUsed().should.match(/\d+/);
     });
   });
   
