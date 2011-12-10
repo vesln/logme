@@ -1,5 +1,5 @@
 
-0.2.1 / 2011-12-10 
+0.2.2 / 2011-12-10 
 ==================
 
   * Bumping version number and adding eyes as dep
