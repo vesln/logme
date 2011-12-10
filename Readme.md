@@ -35,6 +35,10 @@ Sure.
 
 Anytime.
 
+## Theme master?
+
+Send me a pull request with your theme and I will include it the core.
+
 ## Inspiration.
 
 - [log.js](https://github.com/visionmedia/log.js)
