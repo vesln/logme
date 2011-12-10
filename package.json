@@ -5,7 +5,7 @@
   , "keywords": ["logger", "logging", "log"]
   , "author": "Veselin Todorov <hi@vesln.com>"
   , "dependencies": {
-      "colors": "0.5.1"
+      "cli-color": "0.1.4"
   }
   , "devDependencies": {
       "mocha": "0.3.3"
