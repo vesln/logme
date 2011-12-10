@@ -5,7 +5,11 @@
  * Licensed under the MIT License.
  */
 
-var logme = require('../');
+var Logme = require('../').Logme;
+var logme = new Logme({ 
+  theme: {
+    info: 'logme -NFO- :message'
+  }
+});
 
-logme.templates['info'] = 'logme -NFO- :message';
 logme.info('Custom templates');

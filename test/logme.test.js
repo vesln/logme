@@ -8,6 +8,8 @@
 var should = require('should');
 var main = require('../');
 var Logme = main.Logme;
+var themes = main.themes;
+var color = require('cli-color');
 var dateRegExp = /(Sun|Mon|Tue|Wed|Thu|Fri|Sat)\,\s\d{2}\s(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)\s\d{4}\s\d{2}:\d{2}:\d{2}\sGMT/;
 var logme = null;
 var log = null;
@@ -40,6 +42,7 @@ describe('Logme', function(){
   it('should have defaults', function(){
     logme.options.should.eql({
       level: 'debug',
+      theme: 'default',
       stream: process.stdout
     });
   });
@@ -51,16 +54,6 @@ describe('Logme', function(){
       warning: 4,
       error: 3,
       critical: 2
-    });
-  });
-  
-  it('should have templates', function(){
-    logme.templates.should.eql({
-      debug: '- DEBUG -'.magenta + ' :message',
-      info: '- INFO -'.cyan + ' :message',
-      warning: '- WARNING -'.yellow + ' :message',
-      error: '- ERROR -'.red + ' :message',
-      critical: '- CRITICAL -'.red.bold + ' :message'
     });
   });
   
@@ -91,8 +84,9 @@ describe('Logme', function(){
   describe('message', function(){
     it('should format messages', function(){
       var msg = 'Test msg';
+      var theme = themes.get('default');
       for (var level in logme.levels) {
-        logme.message(level, msg).should.eql(logme.templates[level].replace(':message', msg));
+        logme.message(level, msg).should.eql(theme[level].replace(':message', msg));
       }
     });
     
