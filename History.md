@@ -1,4 +1,10 @@
 
+0.3.0 / 2011-12-16 
+==================
+
+  * Adding minimalistic theme for tests
+  * Adding support for logging multiple values at once
+
 0.2.2 / 2011-12-10 
 ==================
 
