@@ -35,7 +35,7 @@ describe('Logme', function(){
   });
   
   it('should be configurable on construction', function(){
-    logme = new Logme({ prefix: 'foo' });
+    var logme = new Logme({ prefix: 'foo' });
     logme.options.prefix.should.equal('foo');
   });
   
@@ -91,11 +91,14 @@ describe('Logme', function(){
     });
     
     it('should replace tokens', function(){
+      var logme = new Logme({level: 'error', stream: stream});
+      var debug = logme.templates['debug'];
       logme.tokens['foo'] = function() {
         return 'bar';
       };
       logme.templates['debug'] = ':message :foo';
       logme.message('debug', 'Foo').should.eql('Foo bar');
+      logme.templates['debug'] = debug;
     });
   });
   
@@ -113,6 +116,14 @@ describe('Logme', function(){
       var logme = new Logme({level: 'debug', stream: stream });
       logme.log('debug', 'Bar')
       log.should.equal(logme.message('debug', 'Bar') + '\n');
+    });
+    
+    it('should log multiple values at once', function(){
+      var logme = new Logme({ level: 'debug', stream: stream, theme: 'minimalistic' });
+      logme.log('debug', 'Foo', 'bar', 'baz');
+      log.should.eql('debug: Foo bar baz\n');
+      logme.debug('Key:', 'value');
+      log.should.eql('debug: Key: value\n');
     });
   });
   
