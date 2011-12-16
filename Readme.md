@@ -39,7 +39,7 @@ Anytime.
 
 ## Theme master?
 
-Send me a pull request with your theme and I will include it the core.
+Send me a pull request with your theme and I will include it.
 
 ## Inspiration.
 
