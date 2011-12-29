@@ -1,4 +1,10 @@
 
+0.3.1 / 2011-12-29 
+==================
+
+  * Adding env example
+  * Bumping cli-color version numbers
+
 0.3.0 / 2011-12-16 
 ==================
 
