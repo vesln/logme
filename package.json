@@ -1,11 +1,11 @@
 {
     "name": "logme"
-  , "version": "0.3.0"
+  , "version": "0.3.1"
   , "description": "Minimalistic stream logger"
   , "keywords": ["logger", "logging", "log"]
   , "author": "Veselin Todorov <hi@vesln.com>"
   , "dependencies": {
-      "cli-color": "0.1.4"
+      "cli-color": "0.1.5"
     , "eyes": "0.1.7"
   }
   , "devDependencies": {
