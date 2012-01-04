@@ -34,6 +34,10 @@ describe('Logme', function(){
     logme = null;
   });
   
+  it('should expose version', function() {
+    main.version.should.be.ok;
+  });
+  
   it('should be configurable on construction', function(){
     var logme = new Logme({ prefix: 'foo' });
     logme.options.prefix.should.equal('foo');
