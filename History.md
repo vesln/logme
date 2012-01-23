@@ -1,4 +1,9 @@
 
+0.3.4 / 2012-01-23 
+==================
+
+  * Fixed unsafe iteration of object properties (Sembiance)
+
 0.3.3 / 2012-01-04 
 ==================
 
