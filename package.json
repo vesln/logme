@@ -1,6 +1,6 @@
 {
     "name": "logme"
-  , "version": "0.3.4"
+  , "version": "0.3.5"
   , "description": "Minimalistic stream logger"
   , "keywords": ["logger", "logging", "log"]
   , "author": "Veselin Todorov <hi@vesln.com>"
