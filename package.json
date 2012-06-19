@@ -7,7 +7,7 @@
   , "dependencies": {
       "cli-color": "0.1.5"
     , "eyes": "0.1.7"
-    , "package": "1.0.0"
+    , "package": "1.0.x"
   }
   , "devDependencies": {
       "mocha": "0.3.3"
