@@ -10,8 +10,8 @@
     , "package": "1.0.0"
   }
   , "devDependencies": {
-      "mocha": "0.3.3"
-    , "should": "0.3.2"
+      "mocha": "*"
+    , "chai": "*"
   }
   , "repository" : {
       "type" : "git",

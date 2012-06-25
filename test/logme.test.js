@@ -1,11 +1,11 @@
 /**
  * Logme - Minimalistic logging.
- * 
+ *
  * Author: Veselin Todorov <hi@vesln.com>
  * Licensed under the MIT License.
  */
- 
-var should = require('should');
+
+var should = require('chai').should();
 var main = require('../');
 var Logme = main.Logme;
 var themes = main.themes;
@@ -29,20 +29,20 @@ describe('Logme', function(){
   beforeEach(function(){
     logme = new Logme;
   });
-  
+
   afterEach(function(){
     logme = null;
   });
-  
+
   it('should expose version', function() {
     main.version.should.be.ok;
   });
-  
+
   it('should be configurable on construction', function(){
     var logme = new Logme({ prefix: 'foo' });
     logme.options.prefix.should.equal('foo');
   });
-  
+
   it('should have defaults', function(){
     logme.options.should.eql({
       level: 'debug',
@@ -50,7 +50,7 @@ describe('Logme', function(){
       stream: process.stdout
     });
   });
-  
+
   it('should have levels', function(){
     logme.levels.should.eql({
       debug: 7,
@@ -60,7 +60,7 @@ describe('Logme', function(){
       critical: 2
     });
   });
-  
+
   describe('tokens', function(){
     it('should have date', function(){
       logme.tokens.date().should.match(dateRegExp);
@@ -84,7 +84,7 @@ describe('Logme', function(){
       logme.tokens.heapUsed().should.match(/\d+/);
     });
   });
-  
+
   describe('message', function(){
     it('should format messages', function(){
       var msg = 'Test msg';
@@ -93,7 +93,7 @@ describe('Logme', function(){
         logme.message(level, msg).should.eql(theme[level].replace(':message', msg));
       }
     });
-    
+
     it('should replace tokens', function(){
       var logme = new Logme({level: 'error', stream: stream});
       var debug = logme.templates['debug'];
@@ -105,23 +105,23 @@ describe('Logme', function(){
       logme.templates['debug'] = debug;
     });
   });
-  
+
   describe('log', function(){
     afterEach(function(){
       log = null;
     });
-    
+
     it('shouldn\'t log messages if the supplied log level is greater than the defined one', function(){
       var logme = new Logme({level: 'error', stream: stream});
       should.not.exist(logme.log('debug', 'Foo'));
     });
-    
+
     it('should write to the stream', function(){
       var logme = new Logme({level: 'debug', stream: stream });
       logme.log('debug', 'Bar')
       log.should.equal(logme.message('debug', 'Bar') + '\n');
     });
-    
+
     it('should log multiple values at once', function(){
       var logme = new Logme({ level: 'debug', stream: stream, theme: 'minimalistic' });
       logme.log('debug', 'Foo', 'bar', 'baz');
@@ -130,7 +130,7 @@ describe('Logme', function(){
       log.should.eql('debug: Key: value\n');
     });
   });
-  
+
   describe('inspect', function(){
     it('should inspect an obj', function(){
       var logme = new Logme({ stream: stream, theme: { inspect: false }});
