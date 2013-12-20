@@ -1,4 +1,9 @@
 
+0.3.9 / 2013-12-20
+==================
+
+  * fixing some of the tokens in the clean and minimalistic themes
+
 0.3.7 / 2012-06-25
 ==================
 
