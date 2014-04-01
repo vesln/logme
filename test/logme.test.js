@@ -53,6 +53,7 @@ describe('Logme', function(){
 
   it('should have levels', function(){
     logme.levels.should.eql({
+      verbose: 8,
       debug: 7,
       info: 6,
       warning: 4,
